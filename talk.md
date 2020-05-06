@@ -18,16 +18,22 @@ BB1000 Programming in Python
 layout: false
 
 # TOC
-* [Classes](#1)
-  + [Variable and Functions](#3)
-  + [Objects and Classes](#5)
-  + [Instance attributes vs Class attributes](#9)
 
+* [Variables and Functions](#3)
+* [Objects and Classes](#4)
+  + [Class definition in Python](#6)
+  + [Using objects in a program](#8)
+  + [Instance attributes vs Class attributes](#9)
+  + [Data encapsulation in object oriented programming](#10)
+  + [Special methods and overloading](#11)
+  + [Class inheritance](#13)
+  + [Class diagrams](#19)
+  + [Few practical tricks](#20)
 
 
 ---
 
-## Variable and Functions
+# Variables and Functions
 
 DATA: Variables
 ~~~python
@@ -44,13 +50,13 @@ def printinfo(name, age):
 ~~~
 
 
-### Simple program
+##Simple program
 
 <img src="img/simple_program.png" height="250" class="centered">
 
 ---
 
-## Objects and Classes
+# Objects and Classes
 
 <img src="img/object.png" height="400" class="center">
 
@@ -73,7 +79,7 @@ def printinfo(name, age):
 
 ---
 
-###Objects and Classes
+##Objects and Classes
 
 Class - blueprint for creation of an object
 
@@ -89,7 +95,7 @@ class Person:
 
 ~~~
 
-##Class definition in Python
+## Class definition in Python
 
 ~~~
 class Name:
@@ -107,7 +113,7 @@ def __init__(self, <list of parameters>):
 
 ##Objects and classes
 
-###Ordinare class methods are defined as
+###Ordinary class methods are defined as
 
 ~~~
 def name_of_method(self, <list of paramters>):
@@ -128,7 +134,7 @@ more correct description*
 
 ##Objects and Classes
 
-###Using objects in a program:
+## Using objects in a program
 
 * creating an **instance** of an object in a program
 
@@ -169,7 +175,7 @@ class Person:
 
 ---
 
-###Data encapsulation in ojbect oriented programming
+## Data encapsulation in object oriented programming
 
 * Public attributes can be freely used in side or outside of a class definition
 
@@ -194,7 +200,7 @@ self.__name = value #Private attriute
 
 ---
 
-### Special methods and opverloading
+## Special methods and overloading
 
 * constructor
 
@@ -246,7 +252,7 @@ p._floordiv__(self, other) # floor division, //
 
 ---
 
-### Class inheritance
+## Class inheritance
 
 * Making derived class from base class:
 
@@ -356,7 +362,7 @@ Person : John Doe, salary: 29500
 
 ---
 
-## Replacing multiple ifs with inheritance
+###Replacing repeated if-statements with inheritance
 
 ~~~python
 def action(animal, name):
@@ -386,7 +392,7 @@ Felix chases mouse
 ~~~
 
 ---
-##Replacing multiple ifs with inheritance
+###Replacing repeated if-statements with inheritance
 
 ~~~python
 class Animal:
@@ -434,7 +440,7 @@ Are often used to illustrate dependencies between classes
 
 ---
 
-###Few practical tricks
+## Few practical tricks
 
 * Use separate file to describe a class and import it into the main program
 * If you want to add some code to the class file, which is not definition of
