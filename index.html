@@ -137,16 +137,16 @@ class: center, middle, inverse
 
 ---
 
-&lt;style&gt;
+<style>
 .centered {
   display: block;
   margin-left: auto;
   margin-right: auto;
 }
-&lt;/style&gt;
-&lt;link rel=&#34;stylesheet&#34; href=&#34;/js/highlight/styles/gruvbox-light.css&#34;&gt;
-&lt;script src=&#34;/js/highlight/highlight.pack.js&#34;&gt;&lt;/script&gt;
-&lt;script&gt;hljs.initHighlightingOnLoad();&lt;/script&gt;
+</style>
+<link rel="stylesheet" href="/classes/js/highlight/styles/gruvbox-light.css">
+<script src="/classes/js/highlight/highlight.pack.js"></script>
+<script>hljs.initHighlightingOnLoad();</script>
 
 # Classes
 
@@ -170,28 +170,28 @@ layout: false
 
 DATA: Variables
 ~~~python
-str1 = &#34;Hello World!&#34;
-str2 = &#34;Python Programming&#34;
-lst = [&#39;physics&#39;, &#39;chemistry&#39;, 1997, 2000]
+str1 = "Hello World!"
+str2 = "Python Programming"
+lst = ['physics', 'chemistry', 1997, 2000]
 ~~~
 
 Actions: Functions
 ~~~python
 def printinfo(name, age):
-    print(&#34;Name&#34; , name)
-    print(&#34;Age&#34;, age)
+    print("Name" , name)
+    print("Age", age)
 ~~~
 
 
 ### Simple program
 
-&lt;img src=&#34;img/simple_program.png&#34; height=&#34;250&#34; class=&#34;centered&#34;&gt;
+<img src="img/simple_program.png" height="250" class="centered">
 
 ---
 
 ## Objects and Classes
 
-&lt;img src=&#34;img/object.png&#34; height=&#34;400&#34; class=&#34;center&#34;&gt;
+<img src="img/object.png" height="400" class="center">
 
 ---
 
@@ -224,7 +224,7 @@ class Person:
         self.surname = surname
 
     def __str__(self):
-        return f&#34;Person: {self.given_name} {self.surname}&#34;
+        return f"Person: {self.given_name} {self.surname}"
 
 ~~~
 
@@ -238,7 +238,7 @@ class Name:
 ##Most important special method is a *constuctor*
 
 ~~~
-def __init__(self, &lt;list of parameters&gt;):
+def __init__(self, <list of parameters>):
     ...
 ~~~
 
@@ -249,7 +249,7 @@ def __init__(self, &lt;list of parameters&gt;):
 ###Ordinare class methods are defined as
 
 ~~~
-def name_of_method(self, &lt;list of paramters&gt;):
+def name_of_method(self, <list of paramters>):
     ...
 ~~~
 
@@ -272,13 +272,13 @@ more correct description*
 * creating an **instance** of an object in a program
 
 ~~~python
-p = Person(&#34;Adam&#34;, &#34;Smith&#34;)
+p = Person("Adam", "Smith")
 ~~~
 
 * accessing instance attributes in a program
 
 ~~~python
-p.given_name = &#39;John&#39;
+p.given_name = 'John'
 ~~~
 
 * calling instance methods in a program
@@ -299,7 +299,7 @@ class Person:
         self.surname = surname        # instance attribute
 
     def __str__(self):
-        return f&#34;Person: {self.given_name} {self.surname}&#34;
+        return f"Person: {self.given_name} {self.surname}"
 
 ~~~
 
@@ -323,7 +323,7 @@ unless inside of a subclass definition
 self._value = value # Protected attribute
 ~~~
 
-* Private atributes are inaccessible and invisible. It&#39;s is neihter possible to
+* Private atributes are inaccessible and invisible. It's is neihter possible to
   read nor write to those attribtes, except inside of the class definition
 itself
 
@@ -356,7 +356,7 @@ str(p) # calls p.__str__()
 * getting attribute
 
 ~~~
-p.attr # calls p._getattribute__(&#39;attr&#39;)
+p.attr # calls p._getattribute__('attr')
 ~~~
 
 ---
@@ -364,7 +364,7 @@ p.attr # calls p._getattribute__(&#39;attr&#39;)
 * setting attribute
 
 ~~~
-p.attr  = value # calls p._setattribute__(&#39;attr&#39;, value)
+p.attr  = value # calls p._setattribute__('attr', value)
 ~~~
 
 * getting list of attributes
@@ -423,25 +423,25 @@ isinstance(Object, Class) # True or False
 ~~~python
 class Parent:
     def __init__(self):
-        print(&#34;Base constructor&#34;)
+        print("Base constructor")
 
     def base_method(self):
-        print(&#39;Calling base method&#39;)
+        print('Calling base method')
 
 class Child(Parent):
     def __init__(self):
-        print(&#34;Derived constructor&#34;)
+        print("Derived constructor")
 
     def derived_method(self):
-        print(&#39;Calling derrived method&#39;)
+        print('Calling derrived method')
 
 ~~~
 ~~~
-&gt;&gt;&gt; c = Child()
+>>> c = Child()
 Derived constructor
-&gt;&gt;&gt; c.base_method()
+>>> c.base_method()
 Calling base method
-&gt;&gt;&gt; c.derived_method()
+>>> c.derived_method()
 Calling derrived method
 ~~~
 
@@ -472,7 +472,7 @@ class Person:
         self.surname = surname  # instance attribute
 
     def get_person(self):
-        return &#34;Person : &#34; + self.given_name + &#34; &#34; + self.surname
+        return "Person : " + self.given_name + " " + self.surname
 
 
 class Employee(Person):
@@ -481,13 +481,13 @@ class Employee(Person):
         self.salary = salary
 
     def get_employee(self):
-        return self.get_person() + &#34;, salary: &#34; + str(self.salary)
+        return self.get_person() + ", salary: " + str(self.salary)
 
 ~~~
 
 ~~~
-&gt;&gt;&gt;  e = Employee(&#39;John&#39;, &#39;Doe&#39;, 29500)
-&gt;&gt;&gt;  print(e.get_employee())
+>>>  e = Employee('John', 'Doe', 29500)
+>>>  print(e.get_employee())
 Person : John Doe, salary: 29500
 ~~~
 
@@ -500,7 +500,7 @@ Person : John Doe, salary: 29500
   the class, use the following syntax
 
 ~~~python
-if __name__ == &#34;__main__&#34;:
+if __name__ == "__main__":
     ...
     ...
 ~~~
@@ -513,7 +513,7 @@ if __name__ == &#34;__main__&#34;:
     <script src="/classes/refreeze/js/high.js" type="text/javascript"></script>
     <script type="text/javascript">
       var slideshow = remark.create({
-          highlightStyle: 'gml',
+          highlightStyle: 'sunburst',
           highlightLanguage: 'remark'
         }) ;
     </script>
