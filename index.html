@@ -195,7 +195,7 @@ def printinfo(name, age):
 
 ---
 
-## Objects and Classes
+##Objects and Classes
 
 ### Procedure Oriented Programming
 
@@ -454,6 +454,8 @@ Calling derrived method
 
 * to take advantages of existing Python classes
 
+* when similar if statements are repeated throughout code
+
 ~~~
 import moduleName
 class DerivedClass(moduleName.BaseClass):
@@ -493,9 +495,87 @@ Person : John Doe, salary: 29500
 
 ---
 
+## Replacing multiple ifs with inheritance
+
+~~~python
+def action(animal, name):
+    print(name, 'is a', animal)
+    make_sound(animal, name)
+    chases(animal, name)
+
+def make_sound(animal, name):
+    if animal == 'Cat':
+        print(name, "says 'Meow'!")
+    elif animal == 'Dog':
+        print(name, "says 'Bow-wow!'")
+
+def chases(animal, name):
+    if animal == 'Cat':
+        print(name, "chases mouse")
+    elif animal == 'Dog':
+        print(name, "chases cat")
+~~~
+Consider adding more animals and more behaviours - 
+this pattern becomes difficult to maintain in larger codes
+~~~
+>>> action('Cat', 'Felix')
+Felix is a Cat
+Felix says 'Meow'!
+Felix chases mouse
+~~~
+
+---
+##Replacing multiple ifs with inheritance
+
+~~~python
+class Animal:
+    def __init__(self, name):
+        self.name = name
+
+    def action(self):
+        print(self.name, 'is a', self.__class__.__name__)
+        self.make_sound()
+        self.chase()
+
+class Cat(Animal):
+    def make_sound(self):
+        print(self.name, "says 'Meow'!")
+
+    def chase(self):
+        print(self.name, "chases mouse")
+
+class Dog(Animal):
+    def make_sound(self):
+        print(self.name, "says 'Bow-wow!'")
+
+    def chase(self):
+        print(self.name, "chases cat")
+~~~
+
+~~~
+>>> Cat('Felix').action()
+Felix is a Cat
+Felix says 'Meow'!
+Felix chases mouse
+~~~
+
+---
+
+## Class diagrams
+
+Are often used to illustrate dependencies between classes
+
+<img src="img/classes.png">
+
+* each class is represented by a box
+* each box is divided name, attributes, methods
+* arrows indicate inheritance relationships
+
+---
+
 ###Few practical tricks
 
-* Use separate file to describe a class and iport it into the main program
+* Use separate file to describe a class and import it into the main program
 * If you want to add some code to the class file, which is not definition of
   the class, use the following syntax
 
