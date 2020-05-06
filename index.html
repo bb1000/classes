@@ -505,21 +505,23 @@ Person : John Doe, salary: 29500
 
 ~~~python
 def action(animal, name):
-    print(name, 'is a', animal)
-    make_sound(animal, name)
-    chases(animal, name)
 
-def make_sound(animal, name):
+    print(name, 'is a', animal)
+
     if animal == 'Cat':
         print(name, "says 'Meow'!")
     elif animal == 'Dog':
         print(name, "says 'Bow-wow!'")
+    else:
+        print("Don't know what", name, "sounds like")
 
-def chases(animal, name):
+
     if animal == 'Cat':
         print(name, "chases mouse")
     elif animal == 'Dog':
         print(name, "chases cat")
+    else:
+        print("Don't know what", name, "chases")
 ~~~
 Consider adding more animals and more behaviours - 
 this pattern becomes difficult to maintain in larger codes
@@ -531,8 +533,6 @@ Felix chases mouse
 ~~~
 
 ---
-###Replacing repeated if-statements with inheritance
-
 ~~~python
 class Animal:
     def __init__(self, name):
@@ -543,12 +543,11 @@ class Animal:
         self.make_sound()
         self.chase()
 
-class Cat(Animal):
     def make_sound(self):
-        print(self.name, "says 'Meow'!")
+        print("Don't know what", self.name, "sounds like")
 
     def chase(self):
-        print(self.name, "chases mouse")
+        print("Don't know what", self.name, "chases")
 
 class Dog(Animal):
     def make_sound(self):
@@ -556,8 +555,14 @@ class Dog(Animal):
 
     def chase(self):
         print(self.name, "chases cat")
-~~~
 
+class Cat(Animal):
+    def make_sound(self):
+        print(self.name, "says 'Meow'!")
+
+    def chase(self):
+        print(self.name, "chases mouse")
+~~~
 ~~~
 >>> Cat('Felix').action()
 Felix is a Cat
