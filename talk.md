@@ -46,13 +46,13 @@ def printinfo(name, age):
 
 ### Simple program
 
-<img src="simple_program.png" height="250" class="centered">
+<img src="img/simple_program.png" height="250" class="centered">
 
 ---
 
 ## Objects and Classes
 
-<img src="object.png" height="400" class="center">
+<img src="img/object.png" height="400" class="center">
 
 ---
 
