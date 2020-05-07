@@ -164,6 +164,7 @@ class Person:
     def __init__(self, given_name, surname):
         self.given_name = given_name  # instance attribute
         self.surname = surname        # instance attribute
+        Person.number += 1
 
     def __str__(self):
         return f"Person: {self.given_name} {self.surname}"
