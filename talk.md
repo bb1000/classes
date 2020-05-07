@@ -75,7 +75,7 @@ def printinfo(name, age):
 * suitable for large programs
 
 **Everything in Python is an *object*, and almost everything has attributes
-(data) and ethods (functions for manipulating data)**
+(data) and methods (functions for manipulating data)**
 
 ---
 
