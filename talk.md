@@ -18,17 +18,16 @@ BB1000 Programming in Python
 layout: false
 
 # TOC
-
 * [Variables and Functions](#3)
-* [Objects and Classes](#4)
-  + [Class definition in Python](#6)
-  + [Using objects in a program](#8)
-  + [Instance attributes vs Class attributes](#9)
-  + [Data encapsulation in object oriented programming](#10)
-  + [Special methods and overloading](#11)
-  + [Class inheritance](#13)
-  + [Class diagrams](#19)
-  + [Few practical tricks](#20)
+* [Objects and Classes](#5)
+  + [Class definition in Python](#7)
+  + [Using objects in a program](#9)
+  + [Instance attributes vs Class attributes](#10)
+  + [Data encapsulation in object oriented programming](#11)
+  + [Special methods and overloading](#12)
+  + [Class inheritance](#14)
+  + [Class diagrams](#20)
+  + [Few practical tricks](#21)
 
 
 ---
@@ -49,10 +48,11 @@ def printinfo(name, age):
     print("Age", age)
 ~~~
 
+---
 
 ##Simple program
 
-<img src="img/simple_program.png" height="250" class="centered">
+<img src="img/simple_program.png" height="400" class="centered">
 
 ---
 
@@ -184,7 +184,7 @@ class Person:
 self.name = value #Public attribute
 ~~~
 
-* Protected attributes should not be used otuside of the class definition
+* Protected attributes should not be used outside of the class definition
 unless inside of a subclass definition
 
 ~~~python
@@ -196,7 +196,7 @@ self._value = value # Protected attribute
 itself
 
 ~~~python
-self.__name = value #Private attriute
+self.__name = value #Private attribute
 ~~~
 
 ---
@@ -301,7 +301,7 @@ class Child(Parent):
         print("Derived constructor")
 
     def derived_method(self):
-        print('Calling derrived method')
+        print('Calling derived method')
 
 ~~~
 ~~~
@@ -310,7 +310,7 @@ Derived constructor
 >>> c.base_method()
 Calling base method
 >>> c.derived_method()
-Calling derrived method
+Calling derived method
 ~~~
 
 ---
