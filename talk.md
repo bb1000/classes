@@ -446,6 +446,56 @@ Are often used to illustrate dependencies between classes
 
 ---
 
+## Static methods
+
+Static methods are ordinary functions, living in the class namespace. They
+might as well be defined outside the class, except that they are now called 
+with a class name prefix. They do not depend on an instance, and do not have a
+`self` parameter.
+
+Static methods are defined with the `@staticmethod` decorator
+
+~~~
+class A:
+
+    def instance_method(self):
+        print("In instance_method")
+
+    @staticmethod
+    def static_method():
+        print("In static method")
+
+
+~~~
+~~~
+>>> A().instance_method()
+In instance_method
+>>> A.static_method()
+In static method
+~~~
+
+---
+
+## Class methods
+
+Class methods are often used as alternative constructors
+
+~~~
+class Dog:
+
+    def __init__(self, breed, name):
+        self.breed = breed
+
+    @classmethod
+    def snoopy(cls):
+        return cls('Beagle', 'Snoopy')
+
+dog = Dog.snoopy()
+print(dog.breed, dog.name)
+
+~~~
+---
+
 ## Few practical tricks
 
 * Use separate file to describe a class and import it into the main program

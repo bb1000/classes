@@ -585,6 +585,34 @@ Are often used to illustrate dependencies between classes
 
 ---
 
+## Static methods
+
+Static methods are ordinary functions, living in the class namespace. They
+might as well be defined outside the class, except that they are now called 
+with a class name prefix. They do not depend on an instance, and do not have a
+`self` parameter.
+
+~~~
+class A:
+
+    def instance_method(self):
+        print("In intance_method")
+
+    @staticmethod
+    def static_method():
+        print("In static method")
+
+
+~~~
+~~~
+>>> A().instance_method()
+In intance_method
+>>> A.static_method()
+In static method
+~~~
+
+---
+
 ## Few practical tricks
 
 * Use separate file to describe a class and import it into the main program
