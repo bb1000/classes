@@ -157,6 +157,7 @@ BB1000 Programming in Python
 layout: false
 
 # TOC
+* [Classes](#1)
 * [Variables and Functions](#3)
 * [Objects and Classes](#5)
   + [Class definition in Python](#7)
@@ -166,7 +167,9 @@ layout: false
   + [Special methods and overloading](#12)
   + [Class inheritance](#14)
   + [Class diagrams](#20)
-  + [Few practical tricks](#21)
+  + [Static methods](#21)
+  + [Class methods](#22)
+  + [Few practical tricks](#23)
 
 
 ---
@@ -592,11 +595,13 @@ might as well be defined outside the class, except that they are now called
 with a class name prefix. They do not depend on an instance, and do not have a
 `self` parameter.
 
+Static methods are defined with the `@staticmethod` decorator
+
 ~~~
 class A:
 
     def instance_method(self):
-        print("In intance_method")
+        print("In instance_method")
 
     @staticmethod
     def static_method():
@@ -606,11 +611,31 @@ class A:
 ~~~
 ~~~
 >>> A().instance_method()
-In intance_method
+In instance_method
 >>> A.static_method()
 In static method
 ~~~
 
+---
+
+## Class methods
+
+Class methods are often used as alternative constructors
+
+~~~
+class Dog:
+
+    def __init__(self, breed, name):
+        self.breed = breed
+
+    @classmethod
+    def snoopy(cls):
+        return cls('Beagle', 'Snoopy')
+
+dog = Dog.snoopy()
+print(dog.breed, dog.name)
+
+~~~
 ---
 
 ## Few practical tricks

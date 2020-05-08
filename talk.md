@@ -18,6 +18,7 @@ BB1000 Programming in Python
 layout: false
 
 # TOC
+* [Classes](#1)
 * [Variables and Functions](#3)
 * [Objects and Classes](#5)
   + [Class definition in Python](#7)
@@ -27,7 +28,9 @@ layout: false
   + [Special methods and overloading](#12)
   + [Class inheritance](#14)
   + [Class diagrams](#20)
-  + [Few practical tricks](#21)
+  + [Static methods](#21)
+  + [Class methods](#22)
+  + [Few practical tricks](#23)
 
 
 ---
