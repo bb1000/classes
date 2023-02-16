@@ -1,14 +1,3 @@
-<style>
-.centered {
-  display: block;
-  margin-left: auto;
-  margin-right: auto;
-}
-</style>
-<link rel="stylesheet" href="/js/highlight/styles/gruvbox-light.css">
-<script src="/js/highlight/highlight.pack.js"></script>
-<script>hljs.initHighlightingOnLoad();</script>
-
 # Classes
 
 ---
@@ -397,11 +386,11 @@ Felix chases mouse
 
 ~~~
 ~~~python
->>> animal = Animal('Olav')
+>>> animal = Animal('Horse')
 >>> animal.action()
-Olav is a Animal
-Don't know what Olav sounds like
-Don't know what Olav chases
+Horse is a Animal
+Don't know what Horse sounds like
+Don't know what Horse chases
 
 ~~~
 ---
@@ -439,7 +428,7 @@ Felix chases mouse
 
 Are often used to illustrate dependencies between classes
 
-<img src="{{ base }}/img/classes.png">
+<img src="img/classes.png">
 
 * each class is represented by a box
 * each box is divided name, attributes, methods
