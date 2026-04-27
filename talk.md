@@ -4,42 +4,50 @@
 
 layout: false
 
+## Paradigms of programming
 
-## Variables and Functions
+* Procedure Oriented Programming
+* Object Oriented Programming
+* Functional Programming
+* Logic Programming
+* Event Driven Programming
+* Aspect Oriented Programming
+* etc.
 
-DATA: Variables
+## Procedure Oriented Programming
+
+* program is a sequence of instructions
+* data is separate from functions
+* functions operate on data
+
 ~~~python
-str1 = "Hello World!"
-str2 = "Python Programming"
-lst = ['physics', 'chemistry', 1997, 2000]
+def print_book(book_data):
+    title, author, year = book_data
+    print(f"Title: {title}")
+    print(f"Author: {author}")
+    print(f"Publication Year: {year}")
 ~~~
 
-Actions: Functions
-~~~python
-def printinfo(name, age):
-    print("Name" , name)
-    print("Age", age)
 ~~~
+>>> book_data = ("Python Essential Reference", "David Beazley", 2009)
+>>> print_book(book_data)
+Title: Python Essential Reference
+Author: David Beazley
+Publication Year: 2009
+
+~~~
+
 
 ---
 
-## Objects and Classes
-
-### Procedure Oriented Programming
-
-* functions and variables used to make program
-* functions operate on data
-* data passed between functions
-* suitable for small/medium programs
-
-### Object Oriented Programming
+## Object oriented programming
 
 * objects used to make program
 * functions and data a unit
 * an object has data attributes and methods
 * methods are functions that operate on its data
 * enables reuse of code
-* suitable for large programs
+
 
 *Everything in Python is an *object*, and almost everything has attributes
 (data) and methods (functions for manipulating data)*
@@ -51,54 +59,58 @@ def printinfo(name, age):
 ### Class - blueprint for creation of an object
 
 ~~~python
-class Person:
-    def __init__(self, given_name, surname):
-        self.given_name = given_name
-        self.surname = surname
+class Book:
+    def __init__(self, title, author, year)
+        self.title = title
+        self.author = author
+        self.year = year
 
     def __str__(self):
-        return f"Person: {self.given_name} {self.surname}"
+        return f"""\
+Title: {self.title}
+Author: {self.author}
+Publication Year: {self.year}
+"""
+~~~
+
+~~~
+>>> book = Book("Python Essential Reference", "David Beazley", 2009)
+>>> print(book)
+Title: Python Essential Reference
+Author: David Beazley
+Publication Year: 2009
 
 ~~~
 
-## Class definition in Python
+* `Book` is the recipe
+* `book` is the created object: an instance of the class Book
+
+### Class definition in Python
+
+* the `class` keyword
+* the name of the class + ":" (CamelCase by convention)
+* the body of the class definition is indented
+* the body contains attributes and methods (functions) of the class
 
 ~~~
-class Name:
+class ClassName:
     ...
 ~~~
 
-##Most important special method is a *constuctor*
+### Special methods in Python classes
 
-~~~
-def __init__(self, <list of parameters>):
-    ...
-~~~
+* special methods have leading and trailing double underscores
+* `__init__` initializes an object
+* called after the object is created
+* `__str__` returns a string representation of an object
 
----
-
-##Objects and classes
-
-###Ordinary class methods are defined as
-
-~~~
-def name_of_method(self, <list of paramters>):
-    ...
-~~~
-
-###self is passed to all class methods and has the following meaning
+### What is `self`?
 
 * In the constructor init refers to newly created object
 * In ordinary class methods it refers to the object for this method is called
 
-*Note: the `__init__` method is often called a constructor, in analogy with
-other OO languages, but the object has already been constructed entring the
-function and is refered to with by the `self` variable. Initializer would be a
-more correct description*
-
 ---
 
-## Objects and Classes
 
 ### Using objects in a program
 
